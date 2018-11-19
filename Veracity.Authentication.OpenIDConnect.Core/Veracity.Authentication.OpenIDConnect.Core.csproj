@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>Veracity</Authors>
+    <Description>Veracity authentication connector for dot net core application</Description>
+    <Copyright>Copyright 2018 DNV GL (https://developer.veracity.com)</Copyright>
+    <PackageProjectUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://avatars3.githubusercontent.com/u/28704632?s=200&amp;amp;v=4</PackageIconUrl>
+    <RepositoryUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>Veracity Authentication OpenId Generator</PackageTags>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="2.1.2" />
