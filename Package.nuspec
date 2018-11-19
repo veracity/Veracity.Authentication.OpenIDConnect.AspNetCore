@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Veracity.Authentication.OpenIDConnect.Core</id>
+    <version>1.0.0</version>
+    <authors>Veracity</authors>
+    <owners>Veracity</owners>
+    <licenseUrl>https://developer.veracity.com/doc/open-source-projects</licenseUrl>
+    <projectUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</projectUrl>
+    <iconUrl>https://avatars3.githubusercontent.com/u/28704632?s=200&amp;v=4</iconUrl>
+    <requireLicenseAcceptance>True</requireLicenseAcceptance>
+    <description>Veracity authentication connector for dot net core application</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>Veracity Authentication OpenId generator</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNetCore.Authentication.OpenIdConnect" version="2.1.2" />
+      <dependency id="Microsoft.AspNetCore.Http" version="2.1.1" />
+      <dependency id="Microsoft.Extensions.Configuration" version="2.1.1" />
+      <dependency id="Microsoft.Extensions.Configuration.Binder" version="2.1.1" />
+      <dependency id="Microsoft.Identity.Client" version="1.1.4-preview0002" />
+    </dependencies>
+  </metadata>
+</package>
