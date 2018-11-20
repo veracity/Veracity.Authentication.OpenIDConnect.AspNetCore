@@ -70,11 +70,6 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
 ## Integrate with Veracity policy service(check terms and conditions) and check the service subscription
 Veracity will integrate the policy service into identity provider, but before we have done that, you need to check the policy services in your code mannully and before the user landing to home page.  
 ```C#
-        private readonly VeracityPlatformService _veracityPlatformService;
-        public HomeController(VeracityPlatformService veracityPlatformService)
-        {
-            _veracityPlatformService = veracityPlatformService;
-        }
         [Authorize]
         public async Task<IActionResult> ValidatePolicy()
         {
