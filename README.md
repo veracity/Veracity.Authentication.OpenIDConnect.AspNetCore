@@ -56,11 +56,17 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
         {
             _veracityPlatformService = veracityPlatformService;
         }
+        /// <summary>
+        /// Be aware that data api and service api has diffierent scope, this is matter about whether you can get valid access token, the service key also different
+        /// </summary>
         [Authorize]
         public async Task<IActionResult> CallApiAsync()
         {
             var client = _veracityPlatformService.Client;
+            //Calling user related api
             var request = new HttpRequestMessage(HttpMethod.Get, "/platform/my/profile");
+            // calling data fabric api
+            // var request = new HttpRequestMessage(HttpMethod.Get, "/datafabric/data/api/1/users/me");
             request.Headers.Authorization = await _veracityPlatformService.GetAuthenticationHeaderAsync();
             var response = await client.SendAsync(request);
             ViewData["Payload"] = await response.Content.ReadAsStringAsync();
