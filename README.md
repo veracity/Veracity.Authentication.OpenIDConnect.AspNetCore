@@ -73,8 +73,22 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
             return View();
         }
 ```
+6. Put following Json object into your app.setttings
+```json
+ "VeracityIntegtaion": {
+    "ClientId": "", //Get by email after you register app in https://developer.veracity.com/projects
+    "Tenant": "dnvglb2cprod.onmicrosoft.com",
+    "SignUpSignInPolicyId": "B2C_1A_SignInWithADFSIdp",
+    "RedirectUri": " https://localhost:3000/signin-oidc",//Include this in reply url when you register app in https://developer.veracity.com/projects
+    "ClientSecret": "", //Get by email after you register app in https://developer.veracity.com/projects
+    "VeracityPlatformServiceUrl": "https://api.veracity.com", //base url for veracity services
+    "VeracityPlatformServiceKey": "", //API Key for access Veracity APIs, get from Veracity support
+    "VeracityPlatformServiceScopes":
+      "https://dnvglb2cprod.onmicrosoft.com/83054ebf-1d7b-43f5-82ad-b2bde84d7b75/user_impersonation"
+  },
+```
 ## Integrate with Veracity policy service(check terms and conditions) and check the service subscription
-Veracity will integrate the policy service into identity provider, but before we have done that, you need to check the policy services in your code mannully and before the user landing to home page.  
+Veracity will integrate the policy service into identity provider, but before we have done that, you need to check the policy services in your code mannully before the user landing to home page.  
 ```C#
         [Authorize]
         public async Task<IActionResult> ValidatePolicy()
