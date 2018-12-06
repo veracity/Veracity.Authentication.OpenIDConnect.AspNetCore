@@ -47,7 +47,7 @@ namespace Veracity.Authentication.OpenIDConnect.Core
             }
             catch (MsalUiRequiredException)
             {
-                //Cannot find any cache user in memory, you should sign out and login again.
+                // Cannot find any cache user in memory, you should sign out and login again.
                 throw new AuthenticationException("Cannot find login user credential, please sign out and login again");
             }
         }

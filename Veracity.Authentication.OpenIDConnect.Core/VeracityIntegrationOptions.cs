@@ -2,12 +2,8 @@ namespace Veracity.Authentication.OpenIDConnect.Core
 {
     public class VeracityIntegrationOptions
     {
-        public VeracityIntegrationOptions()
-        {
-            AzureAdB2CInstance = "https://login.microsoftonline.com/tfp";
-        }
         public string ClientId { get; set; }
-        public string AzureAdB2CInstance { get; set; }
+        public string AzureAdB2CInstance { get; set; } = "https://login.microsoftonline.com/tfp";
         public string Tenant { get; set; }
         public string SignUpSignInPolicyId { get; set; }
         public string RedirectUri { get; set; }
@@ -18,5 +14,4 @@ namespace Veracity.Authentication.OpenIDConnect.Core
         public string VeracityPlatformServiceKey { get; set; }
         public string VeracityPlatformServiceScopes { get; set; }
     }
-
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-
 namespace Veracity.Authentication.OpenIDConnect.Core
 {
     public class VeracityIntegrationConfigService : IVeracityIntegrationConfigService
