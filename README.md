@@ -1,18 +1,18 @@
 # Veracity.Authentication.OpenIDConnect.Core
-Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
+Veracity authentication connector for .NET Core (SDK Version >= 2.1.4)
 
-## For new application
-1. Go to https://developer.veracity.com/ enroll as developer
-2. Create you project and applicaitons using developer self-service
-3. Get integration information through email which include client id etc. 
-4. Go to https://developer.veracity.com/doc/create-veracity-app find the instructions how to create veracity app using Veracity App Generator(https://github.com/veracity/generator-veracity)
-5. Copy the application integration info to app.setttings
+## For new applications
+1. Go to https://developer.veracity.com/ and enroll as developer
+2. Create your project and applications using the developer self-service
+3. Get  integration information through email which includes client ID etc. 
+4. Go to https://developer.veracity.com/doc/create-veracity-app and see the instructions for creating Veracity apps using the Veracity App Generator(https://github.com/veracity/generator-veracity)
+5. Update the VeracityIntegration info in the `appsettings.json` file
 6. Run the application 
 
-## For existed application
-1. Make sure the dot net core version >= 2.1.4, go to https://www.microsoft.com/net/download download and install the latest version
-2. Go to Nuget package manager find "Veracity.Authentication.OpenIDConnect.Core" and install it
-3. Put following code in *Program.cs*
+## For existing applications
+1. Make sure that your .NET Core version >= 2.1.4. If not, [download the latest version] (https://www.microsoft.com/net/download).
+2. Go to the NuGet package manager and install `Veracity.Authentication.OpenIDConnect.Core`
+3. Put the following code in `Program.cs`
 ```C#
   public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
@@ -22,7 +22,7 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
                 .UseStartup<Startup>()
                 .Build();
 ```
-4. Put following code in *Startup.cs*
+4. Put the following code in `Startup.cs`
 ```C#
  private readonly IVeracityOpenIdManager _veracityOpenIdManager;
         public Startup(IVeracityOpenIdManager veracityOpenIdManager)
@@ -49,23 +49,23 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
             app.UseAuthentication();
         }
 ```
-5. Inject VeracityPlatformService into your controller to call Veracity platform API
+5. Inject `VeracityPlatformService` into your controller to be able to call the Veracity platform API
 ```C#
         private readonly VeracityPlatformService _veracityPlatformService;
         public HomeController(VeracityPlatformService veracityPlatformService)
         {
             _veracityPlatformService = veracityPlatformService;
         }
-        /// <summary>
-        /// Be aware that data api and service api has diffierent scope, this is matter about whether you can get valid access token, the service key also different
-        /// </summary>
+        /// <remarks>
+        /// Be aware that the data API and service API have different scopes, this is a matter about whether you can get a valid access token. The service key is also different.
+        /// </remarks>
         [Authorize]
         public async Task<IActionResult> CallApiAsync()
         {
             var client = _veracityPlatformService.Client;
-            //Calling user related api
+            // Calling user related API
             var request = new HttpRequestMessage(HttpMethod.Get, "/platform/my/profile");
-            // calling data fabric api
+            // Calling data fabric API
             // var request = new HttpRequestMessage(HttpMethod.Get, "/datafabric/data/api/1/users/me");
             request.Headers.Authorization = await _veracityPlatformService.GetAuthenticationHeaderAsync();
             var response = await client.SendAsync(request);
@@ -73,22 +73,22 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
             return View();
         }
 ```
-6. Put following Json object into your app.setttings
+6. Update the `appsetttings.json` file with information you get after registering your application
 ```json
- "VeracityIntegtaion": {
-    "ClientId": "", //Get by email after you register app in https://developer.veracity.com/projects
+ "VeracityIntegration": {
+    "ClientId": "", 
     "Tenant": "dnvglb2cprod.onmicrosoft.com",
     "SignUpSignInPolicyId": "B2C_1A_SignInWithADFSIdp",
-    "RedirectUri": " https://localhost:3000/signin-oidc",//Include this in reply url when you register app in https://developer.veracity.com/projects
-    "ClientSecret": "", //Get by email after you register app in https://developer.veracity.com/projects
-    "VeracityPlatformServiceUrl": "https://api.veracity.com", //base url for veracity services
-    "VeracityPlatformServiceKey": "", //API Key for access Veracity APIs, get from Veracity support
+    "RedirectUri": " https://localhost:3000/signin-oidc",
+    "ClientSecret": "", 
+    "VeracityPlatformServiceUrl": "https://api.veracity.com", 
+    "VeracityPlatformServiceKey": "", 
     "VeracityPlatformServiceScopes":
       "https://dnvglb2cprod.onmicrosoft.com/83054ebf-1d7b-43f5-82ad-b2bde84d7b75/user_impersonation"
   },
 ```
-## Integrate with Veracity policy service(check terms and conditions) and check the service subscription
-Veracity will integrate the policy service into identity provider, but before we have done that, you need to check the policy services in your code mannully before the user landing to home page.  
+## Integrate with the Veracity policy service (check terms and conditions) and check the service subscription
+Veracity will integrate the policy service into identity provider, but before we have done that, you need to check the policy services in your code manually before the user lands on the home page.  
 ```C#
         [Authorize]
         public async Task<IActionResult> ValidatePolicy()

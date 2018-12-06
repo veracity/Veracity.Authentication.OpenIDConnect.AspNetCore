@@ -1,16 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Authors>Veracity</Authors>
-    <Description>Veracity authentication connector for dot net core application</Description>
+    <Description>Veracity authentication for applications based on ASP.NET Core</Description>
     <Copyright>Copyright 2018 DNV GL (https://developer.veracity.com)</Copyright>
     <PackageProjectUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/28704632?s=200&amp;amp;v=4</PackageIconUrl>
     <RepositoryUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <PackageTags>Veracity Authentication OpenId Generator</PackageTags>
+    <PackageTags>Veracity Authentication OpenIdConnect</PackageTags>
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
@@ -23,5 +23,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.1.1" />
     <PackageReference Include="Microsoft.Identity.Client" Version="1.1.4-preview0002" />
   </ItemGroup>
-
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+  </ItemGroup>
 </Project>
