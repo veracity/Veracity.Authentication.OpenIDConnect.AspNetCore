@@ -11,7 +11,7 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
 6. Run the application 
 
 ## For existing applications
-1. Make sure that your .NET Core version >= 2.1.4. If not, [download the latest version] (https://www.microsoft.com/net/download).
+1. Make sure that your .NET Core version >= 2.1.4. If not, [download the latest version](https://www.microsoft.com/net/download).
 2. Go to the NuGet package manager and install `Veracity.Authentication.OpenIDConnect.Core`
 3. Put the following code in `Program.cs`
 ```C#
@@ -19,7 +19,7 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
             WebHost.CreateDefaultBuilder(args)
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .ConfigureServices(s=>s.AddSingleton<IVeracityIntegrationConfigService, VeracityIntegrationConfigService>())
-                .ConfigureServices(s=>s.AddSingleton<IVeracityOpenIdManager,VeracityOpenIdManager>())
+                .ConfigureServices(s=>s.AddSingleton<IVeracityOpenIdManager, VeracityOpenIdManager>())
                 .UseStartup<Startup>()
                 .Build();
 ```
