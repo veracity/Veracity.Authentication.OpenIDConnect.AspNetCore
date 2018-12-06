@@ -7,6 +7,7 @@
     <Copyright>Copyright 2018 DNV GL (https://developer.veracity.com)</Copyright>
     <PackageProjectUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/28704632?s=200&amp;amp;v=4</PackageIconUrl>
     <RepositoryUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
