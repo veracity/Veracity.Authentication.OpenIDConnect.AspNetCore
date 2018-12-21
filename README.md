@@ -74,7 +74,7 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
             return View();
         }
 ```
-6. Update the `appsetttings.json` file with information you get after registering your application
+6. Update the `appsetttings.json` file with information you get after registering your application, go to Veracity support page request subscription key for platform services. 
 ```json
  "VeracityIntegration": {
     "ClientId": "", 
