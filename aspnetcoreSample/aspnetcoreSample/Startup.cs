@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Veracity.Authentication.OpenIDConnect.Core;
 
-namespace test
+namespace aspnetcoreSample
 {
     public class Startup
     {
