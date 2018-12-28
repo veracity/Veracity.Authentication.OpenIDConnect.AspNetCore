@@ -1,5 +1,5 @@
 
-# Veracity.Authentication.OpenIDConnect.Core [![NuGet version](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core.svg)](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core)
+# Veracity.Authentication.OpenIDConnect.AspNetCore [![NuGet version](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core.svg)](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core)
 Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
 
 ## For new applications
