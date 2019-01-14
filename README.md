@@ -1,6 +1,6 @@
 
-# Veracity.Authentication.OpenIDConnect.Core [![NuGet version](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core.svg)](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core)
-Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
+# Veracity.Authentication.OpenIDConnect.AspNetCore [![NuGet version](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core.svg)](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core)
+Veracity authentication library for dot net core(SDK Version >= 2.1.4)
 
 ## For new applications
 1. Go to https://developer.veracity.com/ and enroll as developer
@@ -65,9 +65,9 @@ Veracity authentication connector for dot net core(SDK Version >= 2.1.4)
         {
             var client = _veracityPlatformService.Client;
             // Calling user related API
-            var request = new HttpRequestMessage(HttpMethod.Get, "/platform/my/profile");
+            var request = new HttpRequestMessage(HttpMethod.Get, "/Veracity/Services/my/profile");
             // Calling data fabric API
-            // var request = new HttpRequestMessage(HttpMethod.Get, "/datafabric/data/api/1/users/me");
+            // var request = new HttpRequestMessage(HttpMethod.Get, "/veracity/datafabric/data/api/1/resources");
             request.Headers.Authorization = await _veracityPlatformService.GetAuthenticationHeaderAsync();
             var response = await client.SendAsync(request);
             ViewData["Payload"] = await response.Content.ReadAsStringAsync();

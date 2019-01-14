@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Veracity.Authentication.OpenIDConnect.Core;
 
-namespace test
+namespace aspnetcoreSample
 {
     public class Program
     {
