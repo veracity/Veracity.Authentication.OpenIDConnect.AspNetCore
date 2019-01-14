@@ -1,14 +1,16 @@
-﻿using System;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Authentication;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Identity.Client;
-
-namespace Veracity.Authentication.OpenIDConnect.Core
+﻿namespace Veracity.Authentication.OpenIDConnect.Core
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Security.Authentication;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.Identity.Client;
+
     public class VeracityPlatformService
     {
         private readonly VeracityIntegrationOptions _veracityIntegrationOptions;
@@ -42,7 +44,13 @@ namespace Veracity.Authentication.OpenIDConnect.Core
                 null);
             try
             {
-                var result = await cca.AcquireTokenSilentAsync(scope, cca.Users.FirstOrDefault(), _veracityIntegrationOptions.Authority, false);
+                IEnumerable<IAccount> accounts = await cca.GetAccountsAsync();
+                IAccount firstAccount = accounts.FirstOrDefault();
+                var result = await cca.AcquireTokenSilentAsync(
+                                 scope,
+                                 firstAccount,
+                                 _veracityIntegrationOptions.Authority,
+                                 false);
                 return result.AccessToken;
             }
             catch (MsalUiRequiredException)

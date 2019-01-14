@@ -6,22 +6,27 @@ namespace Veracity.Authentication.OpenIDConnect.Core
     {
         public const string SectionKey = "VeracityIntegration";
 
-        private readonly VeracityIntegrationOptions _azureAdB2COptions;
+        private readonly IConfiguration configuration;
+
+        private VeracityIntegrationOptions azureAdB2COptions;
+
         public VeracityIntegrationConfigService(IConfiguration configuration)
         {
-            _azureAdB2COptions = new VeracityIntegrationOptions();
-            configuration.GetValue<VeracityIntegrationOptions>(SectionKey);
-            configuration.GetSection(SectionKey).Bind(_azureAdB2COptions);
+            this.configuration = configuration;
         }
 
-        public VeracityIntegrationOptions GetVeracityIntegrationConfig()
+        public virtual VeracityIntegrationOptions GetVeracityIntegrationConfig()
         {
-            return _azureAdB2COptions;
+            if (this.azureAdB2COptions != null)
+            {
+                return this.azureAdB2COptions;
+            }
+
+            this.azureAdB2COptions = new VeracityIntegrationOptions();
+            this.configuration.GetValue<VeracityIntegrationOptions>(SectionKey);
+            this.configuration.GetSection(SectionKey).Bind(this.azureAdB2COptions);
+            return this.azureAdB2COptions;
         }
     }
 
-    public interface IVeracityIntegrationConfigService
-    {
-        VeracityIntegrationOptions GetVeracityIntegrationConfig();
-    }
 }

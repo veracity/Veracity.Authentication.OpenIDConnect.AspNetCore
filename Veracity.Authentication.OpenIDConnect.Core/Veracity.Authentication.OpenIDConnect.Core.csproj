@@ -3,28 +3,28 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <Authors>Veracity</Authors>
-    <Description>Veracity authentication for applications based on ASP.NET Core</Description>
-    <Copyright>Copyright 2018 DNV GL (https://developer.veracity.com)</Copyright>
+    <Description>Veracity authentication library for applications based on ASP.NET Core</Description>
+    <Copyright>Copyright 2019 DNV GL (https://developer.veracity.com)</Copyright>
     <PackageProjectUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageLicenseUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <PackageIconUrl>https://avatars3.githubusercontent.com/u/28704632?s=200&amp;amp;v=4</PackageIconUrl>
     <RepositoryUrl>https://github.com/veracity/Veracity.Authentication.OpenIDConnect.Core</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>Veracity Authentication OpenIdConnect</PackageTags>
-    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageReleaseNotes>Upgrade the identity client to latest stable version</PackageReleaseNotes>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
-    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.1.1</Version>
+    <FileVersion>1.1.1.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.1.1" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="1.1.4-preview0002" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="2.6.2" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\LICENSE" Pack="true" PackagePath="$(PackageLicenseFile)" />
