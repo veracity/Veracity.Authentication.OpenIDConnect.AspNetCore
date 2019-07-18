@@ -2,6 +2,8 @@
 # Veracity.Authentication.OpenIDConnect.AspNetCore [![NuGet version](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core.svg)](https://badge.fury.io/nu/Veracity.Authentication.OpenIDConnect.Core)
 Veracity authentication library for dot net core(SDK Version >= 2.1.4)
 
+**_ _Note: This package is deprecated, please look at https://github.com/veracity/veracity.services.api to find out how to integrate with Veracity identity and/or Service API. You can referece the code if you want build your code based on Microsoft identity library. _ _**
+
 ## For new applications
 1. Go to https://developer.veracity.com/ and enroll as developer
 2. Create your project and applications using the developer self-service
